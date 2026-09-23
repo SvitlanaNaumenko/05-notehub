@@ -78,12 +78,15 @@ export default function App() {
 
       {data && <NoteList notes={data.notes} />}
 
-      <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
-        <NoteForm
-          onSubmit={handleCreateNote}
-          onCancel={() => setIsModalOpen(false)}
-        />
-      </Modal>
+      {/* Умовний рендеринг модалки */}
+      {isModalOpen && (
+        <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
+          <NoteForm
+            onSubmit={handleCreateNote}
+            onCancel={() => setIsModalOpen(false)}
+          />
+        </Modal>
+      )}
     </div>
   );
 }
