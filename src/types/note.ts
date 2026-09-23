@@ -12,17 +12,3 @@ export interface CreateNoteDto {
   content?: string;
   tag: "Todo" | "Work" | "Personal" | "Meeting" | "Shopping";
 }
-
-export interface FetchNotesParams {
-  page?: number;
-  perPage?: number;
-  search?: string;
-}
-
-export interface FetchNotesResponse {
-  notes: Note[];
-  total: number;
-  page: number;
-  perPage: number;
-  totalPages: number;
-}
